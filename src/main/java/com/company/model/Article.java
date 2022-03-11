@@ -22,11 +22,6 @@ public class Article {
     private String snippet;
     private String summary;
 
-
-    @ManyToOne
-    @JoinColumn(name="archiveId", nullable=false, insertable = false, updatable = false)
-    private Archive archive;
-
     public Article(int archiveId, String title, String link, String snippet, String summary) {
         this.archiveId = archiveId;
         this.title = title;
@@ -82,14 +77,6 @@ public class Article {
 
     public void setSummary(String summary) {
         this.summary = summary;
-    }
-
-    public Archive getArchive() {
-        return archive;
-    }
-
-    public void setArchive(Archive archive) {
-        this.archive = archive;
     }
 
     @Override

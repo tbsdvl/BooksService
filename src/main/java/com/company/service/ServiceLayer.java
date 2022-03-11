@@ -85,19 +85,6 @@ public class ServiceLayer {
         return articleRepository.findAll();
     }
 
-    public List<Article> findArchiveArticles(int archiveId) {
-
-        Archive foundArchive = archiveRepository.findById(archiveId).get();
-
-        if (foundArchive.getArchiveName() == null) {
-            throw new IllegalArgumentException("Archive does not exist in the database");
-        }
-
-        List<Article> articleList = articleRepository.findAllArticlesByArchive(archiveId);
-
-        return articleList;
-    }
-
     public void deleteArticle(int id) {
 
         Article foundArticle = articleRepository.findById(id).get();
