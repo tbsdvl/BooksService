@@ -1,5 +1,6 @@
 package com.company.model;
 
+import com.company.exceptions.NotFoundException;
 import javassist.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
