@@ -33,4 +33,8 @@ public class ArticleController {
     public void deleteArticleById(@PathVariable int articleId) {
         serviceLayer.deleteArticle(articleId);
     }
+
+    @PostMapping("/article")
+    @ResponseStatus(value = HttpStatus.OK)
+    public Article createNewArticle(@RequestBody Article article) { return serviceLayer.saveArticle(article); }
 }
